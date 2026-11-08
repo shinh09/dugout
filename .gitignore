@@ -1,0 +1,26 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# blog materials (local only)
+.blog/
+
+# build
+build/
+.gradle/
+out/
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# ide / os
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# claude local
+.claude/settings.local.json

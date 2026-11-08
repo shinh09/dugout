@@ -17,7 +17,7 @@
 - 백엔드: `cd apps/api && ./gradlew test` / `./gradlew bootRun --args='--spring.profiles.active=local'`
 - 프론트: `cd apps/web && npm test` / `npm run dev`
 - API 클라이언트 재생성: `/api-sync`
-- 로컬 DB: `docker compose -f infra/docker-compose.local.yml up -d`
+- 로컬 DB: `docker compose --env-file .env -f infra/docker-compose.local.yml up -d` (5432 포트가 사용 중이면 `.env`의 `DB_PORT`와 `DB_URL` 포트를 함께 바꿔요)
 
 ## 작업 방식
 

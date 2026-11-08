@@ -10,14 +10,12 @@
 
 | 스킬 | 출처 | 용도 | 사용 에이전트 |
 | --- | --- | --- | --- |
-| test-driven-development, systematic-debugging, writing-plans, subagent-driven-development | obra/superpowers (이 4개만, 묶음 전체 설치 안 함) | TDD, 막혔을 때 원인 좁히기, 계획 작성, 서브에이전트 분배 | 오케스트레이터, qa, streaming |
-| webapp-testing | anthropics/skills | Playwright E2E, 화면 캡처(/capture 재사용) | qa, docs |
+| test-driven-development, systematic-debugging | obra/superpowers (이 2개만, 묶음 전체 설치 안 함) | TDD, 막혔을 때 원인 좁히기 | 오케스트레이터, qa, streaming |
 | frontend-design | anthropics/skills | 화면 디자인 품질 | frontend |
-| draw.io | jgraph/drawio-mcp (공식) | 구성도·ERD | docs |
-| skill-creator | anthropics/skills | 직접 만든 스킬 다듬기 | 오케스트레이터 |
 
 - 내장 `/security-review`는 설치 없이 PR 전에 사용
-- 설치 전에 SKILL.md와 포함된 스크립트를 읽고 확인, README에 출처·라이선스 기록
+- 설치 전에 SKILL.md와 포함된 스크립트를 읽고 확인, 출처 커밋·라이선스는 `.claude/skills/THIRD_PARTY.md`에 기록
+- 변경(2026-11-09, #9): 처음 목록 8개 중 5개는 검토 후 제외. subagent-driven-development(승인·멈춤 규칙과 충돌), writing-plans(`/plan`과 중복), skill-creator(내장 스킬과 중복, 레포에 임시 파일 생성), webapp-testing(Python playwright 의존성, E2E는 JS Playwright), drawio(고정되지 않은 원격 지시문). 상세 이유는 THIRD_PARTY.md
 
 ## Gemini 교차 리뷰 (이슈 #8 기준)
 

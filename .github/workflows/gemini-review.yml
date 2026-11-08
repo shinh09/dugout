@@ -27,6 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
           REPOSITORY: ${{ github.repository }}
+          # 체크아웃한 레포의 .gemini/commands 프롬프트를 쓰려면 신뢰 폴더여야 함 (위 if로 같은 레포 PR만 실행)
+          GEMINI_CLI_TRUST_WORKSPACE: "true"
         with:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
           gemini_model: ${{ vars.GEMINI_MODEL }}

@@ -13,7 +13,7 @@ jobs:
     # 포크 PR에는 Secret이 전달되지 않으므로 같은 레포 브랜치에서 온 PR만 리뷰
     if: github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     permissions:
       contents: read
       pull-requests: write
@@ -34,6 +34,8 @@ jobs:
           gemini_model: ${{ vars.GEMINI_MODEL }}
           github_pr_number: ${{ github.event.pull_request.number }}
           workflow_name: gemini-review
+          gemini_debug: true
+          upload_artifacts: true
           settings: |-
             {
               "model": { "maxSessionTurns": 25 },

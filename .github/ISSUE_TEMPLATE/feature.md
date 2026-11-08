@@ -26,6 +26,6 @@ labels: feature
 
 <!--
 담당·단계는 본문에 쓰지 않고 사이드바에서 지정해요.
-- 라벨: 단계(stage:필수 / stage:선택 / stage:제출) + 영역(area:backend / frontend / streaming / qa / docs)
-- 상위 이슈: 해당 단계의 진행 현황 이슈에 하위 이슈(sub-issue)로 연결
+- 라벨: 영역(backend / frontend / streaming / qa / docs) + 종류(feature / bug / task)
+- 단계: 상위 이슈에 하위 이슈(sub-issue)로 연결 — #1 필수 기능 / #2 선택 기능 / #3 제출 준비
 -->

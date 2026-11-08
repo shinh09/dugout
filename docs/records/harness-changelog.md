@@ -5,3 +5,5 @@
 | 날짜 | 실수 | 추가한 장치 (rule / hook / 테스트) | 재발 여부 |
 | --- | --- | --- | --- |
 | 2026-11-08 | (초기 구성) | rules 7, hooks 4(guard·format·stop-test·session-start) | - |
+| 2026-11-08 | PR에 커밋을 더 push했지만 이미 머지돼 커밋 2개가 main에서 빠짐(#11) | 복구 PR(#15), 프로젝트 `/run`이 내장 run 스킬과 이름이 겹쳐 `/run-issues`로 변경 | - |
+| 2026-11-09 | (#9) 외부 스킬 8개 중 5개가 승인·멈춤 규칙과 충돌 | 설치 전 전체 파일 검토, 3개만 커밋 고정 설치(`.claude/skills/THIRD_PARTY.md`) | - |

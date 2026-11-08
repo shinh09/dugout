@@ -4,7 +4,7 @@
 
 ## 구조
 
-- `apps/api` — Spring Boot 3 / Java 21 / PostgreSQL / JPA / Spring Security(JWT) / STOMP
+- `apps/api` — Spring Boot 4.0 / Java 21 / PostgreSQL / JPA / Spring Security(JWT) / STOMP
 - `apps/web` — React + Vite + TypeScript / React Query / LiveKit React
 - `infra` — EC2 docker-compose, Nginx (사용자 담당)
 - `docs/design` — 구현 기준 문서: [screens](docs/design/screens.md), [api](docs/design/api.md), [policy](docs/design/policy.md)

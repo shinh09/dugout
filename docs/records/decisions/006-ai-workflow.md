@@ -5,3 +5,28 @@
 - 추가 적용: OpenAPI 기반 클라이언트 생성, qa가 실패 테스트를 먼저 쓰는 AI 간 TDD, AI 활용 지표 집계
 - 차별점: 하네스 ON/OFF A/B 실험과 harness-changelog로 효과를 수치로 증명
 - 역할 분담: Cowork = 설계·문서·블로그 / Claude Code = 개발·git
+
+## 오픈소스 스킬 (이슈 #9 기준)
+
+| 스킬 | 출처 | 용도 | 사용 에이전트 |
+| --- | --- | --- | --- |
+| test-driven-development, systematic-debugging, writing-plans, subagent-driven-development | obra/superpowers (이 4개만, 묶음 전체 설치 안 함) | TDD, 막혔을 때 원인 좁히기, 계획 작성, 서브에이전트 분배 | 오케스트레이터, qa, streaming |
+| webapp-testing | anthropics/skills | Playwright E2E, 화면 캡처(/capture 재사용) | qa, docs |
+| frontend-design | anthropics/skills | 화면 디자인 품질 | frontend |
+| draw.io | jgraph/drawio-mcp (공식) | 구성도·ERD | docs |
+| skill-creator | anthropics/skills | 직접 만든 스킬 다듬기 | 오케스트레이터 |
+
+- 내장 `/security-review`는 설치 없이 PR 전에 사용
+- 설치 전에 SKILL.md와 포함된 스크립트를 읽고 확인, README에 출처·라이선스 기록
+
+## Gemini 교차 리뷰 (이슈 #8 기준)
+
+정해진 것
+- GitHub Actions에서 PR 열림·업데이트 시에만 실행, API 키는 Secrets `GEMINI_API_KEY`
+- 리뷰 기준(프롬프트): 서버 소유자 권한 검사 누락, 방송 상태 전이(READY→LIVE→ENDED) 위반, 예외 처리, 비밀값 노출
+- 리뷰는 **코드 줄 단위 댓글**(review thread)로 달려야 함 → 브랜치 보호 'Require conversation resolution'과 연결되고, Claude가 댓글마다 답글(반영 커밋 / 미반영 이유)
+- 로컬 사전 점검은 `/review-local`(Gemini CLI)
+
+/plan에서 정할 것
+- 구현 방식: Google 공식 GitHub Action 사용 vs 직접 스크립트(diff → Gemini API → `gh api`로 리뷰 댓글) — 줄 단위 댓글 지원 여부로 판단
+- 모델 이름은 레포 변수로 빼서 바꿀 수 있게
